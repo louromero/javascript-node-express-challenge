@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+    <link rel="stylesheet" href="/bootstrap.min.css">
+    <link rel="icon" type="image/x-icon" href="/img/logo.png">
+    <title>Red Tulum</title>
+</head>
+<!--Imagen de fondo-->
+
+<body class="body">
+    <!--<header class="barra_superior">
+        Insertar logo en barra superior
+        <img src="./img/Redtulum.png" alt="logo" class="logo">
+    </header>-->
+    <header>
+        <%- include ('../partials/header'); -%>
+    </header>
+    
+
+    <!--Diseño lateral de bienvenida-->
+    <div class="bienvenida">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="card-text">
+                                Bienvenidos a la<br> Red Tulum! <br> Aquí podrás encontrar todo lo que necesitas para tu
+                                viaje.
+                            </p>
+                            <a href="/login" id="letra_boton" class="btn btn-primary">Comenzar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <table class="decoracion">
+        <tbody>
+            <tr class="table-active">
+                <th scope="row"></th>
+                <td class="circulo"></td>
+                <td class="circulo"></td>
+                <td class="circulo"></td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+GET http://localhost:3500/api/usuarios
+//Authorization: Hola
+
+###
+POST http://localhost:3500/api/usuarios
+Content-Type: application/json
+
+{
+   "nombre": "Agus Galleguillo",
+   "email": "agus@gmail.com",
+   "password": "1111",
+   "reservas": {
+      "origen": "Argentina",
+      "destino": "Mexico",
+      "fecha": "2022-09-21",
+      "hora": "15:00",
+      "duracion": "9 horas"
+   }
+   
+}
+
+
+###
+// Put se usa para actualizar un registro
+PUT http://localhost:3500/api/usuarios/5
+Content-Type: application/json
+
+{
+   "nombre": "Marcos Cornejos",
+   "email": "marcosCornejos@gmail.com",
+   "password": "121212"
+}
+
+###
+DELETE http://localhost:3500/api/usuarios/62f5c6c951909d5c9500b466
+
+//---------RESERVAS-------
+###
+//Recibe las reservas del usuario
+GET http://localhost:3500/api/reservas/62f98741be40d4f15a29e1d8
+
+//Recibe los datos de una reserva dependiendo del id
+GET http://localhost:3500/api/reservas/62f98741be40d4f15a29e1d8/62f98741be40d4f15a29e1d8
+
+###
+// Post se usa para crear una nueva reserva
+POST http://localhost:3500/api/reservas/62f98741be40d4f15a29e1d8
+Content-Type: application/json
+
+{
+   "origen": "Peru",
+   "destino": "Mexico",
+   "fecha": "2022-11-03",
+   "hora": "19:00",
+   "duracion": "5 horas"
+}
+
+###
+PUT http://localhost:3500/api/reservas/62f6c6e0f6b806a00e3cd398/62f6c6e0f6b806a00e3cd399
+Content-Type: application/json
+
+{
+   "origen": "España",
+   "destino": "Chile",
+   "fecha": "2022-11-03",
+   "hora": "19:00",
+   "duracion": "2 horas"
+}

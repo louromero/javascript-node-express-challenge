@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/bootstrap.min.css">
+    <link rel="icon" type="image/x-icon" href="/img/logo.png">
+    <title>Red Tulum</title>
+</head>
+<!--Imagen de fondo-->
+
+<body class="body_iniciarS">
+
+    <header>
+        <%- include('../partials/header'); -%>
+    </header>
+
+    <%- include('../partials/navegacion'); -%>
+
+
+
+
+    <div class="tab-pane fade" id="proveedores" >
+        <div class="reservas">
+            <div >
+                <h2 style="color: black; float: left; margin-top: 1%;">
+                    Buscar reserva
+                </h2>
+
+
+                <!-- BUSCADOR -->
+                <form action="/buscar_reserva" method="POST" class="row" style="margin-left:20% !important;">
+                    <div class="col-7">
+                        <input class="form-control" type="search" placeholder="Buscar reserva por ID" aria-label="Search" name="idReserva" id="idReserva">
+                    </div>
+                    <div class="col-3 d-flex justify-content-between">
+                        <button class="btn btn-primary" name="btn_todos"  type="submit">Buscar</button>
+                    </div>
+                </form>
+
+
+                <hr style="color: black;">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                            <tr class="columnas">
+                                <th scope="col">Id</th>
+                                <th scope="col">Origen</th>
+                                <th scope="col">Destino</th>
+                                <th scope="col">Fecha</th>
+                                <th scope="col">Hora</th>
+                                <th scope="col">Duración</th>
+                            </tr>
+                            </thead>
+                            <tbody style="text-align: center;">                                       
+                                <!--Mostrar la reserva que se busca-->
+                                <!--si respuesta esta definida-->
+                                
+                                    
+                                <% if(typeof respuesta !== 'undefined'){ %>
+                                    <tr style="color: black;">
+                                        <td><%=respuesta._id %></td>
+                                        <td><%=respuesta.origen %></td>
+                                        <td><%=respuesta.destino %></td>
+                                        <td><%=respuesta.fecha %></td>
+                                        <td><%=respuesta.hora %></td>
+                                        <td><%=respuesta.duracion %></td>
+                                    </tr>
+                                <% } %>
+                            </tbody>
+                        </table> 
+                    </div>                               
+            </div>
+        </div>
+    </div>
+
+
+
+    
+
+
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/bootstrap.min.css">
+    <link rel="icon" type="image/x-icon" href="/img/logo.png">
+    <title>Red Tulum</title>
+</head>
+<!--Imagen de fondo-->
+
+<body class="body_iniciarS">
+
+    <header>
+        <%- include('../partials/header'); -%>
+    </header>
+
+    <%- include('../partials/navegacion'); -%>
+
+
+
+
+    <div class="tab-pane fade" id="proveedores" >
+        <div class="reservas">
+            <div >
+                <h2 style="color: black;">
+                    Mis Reservas
+                </h2>
+
+
+                <hr style="color: black;">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                            <tr class="columnas">
+                                <th scope="col">Id</th>
+                                <th scope="col">Origen</th>
+                                <th scope="col">Destino</th>
+                                <th scope="col">Fecha</th>
+                                <th scope="col">Hora</th>
+                                <th scope="col">Duración</th>
+                                <th scope="col">Editar</th>
+                                <th scope="col">Eliminar</th>
+                            </tr>
+                            </thead>
+                            <tbody style="text-align: center;">                                       
+                                <!--Mostrar todas las reservas que tiene el usuario-->
+                                <% for(var res of respuesta){ %>
+                                    <tr style="color: black;">
+                                        <td><%= res._id %></td>
+                                        <td><%= res.origen %></td>
+                                        <td><%= res.destino %></td>
+                                        <td><%= res.fecha %></td>
+                                        <td><%= res.hora %></td>
+                                        <td><%= res.duracion %></td>
+                                        <td><a href="/editar_reserva/<%= res._id %>" ><img src="/img/editar.png" class="icono-nav"></a></td>
+                                        <td><a href="/eliminar_reserva/<%= res._id %>"><img src="/img/eliminar.png" class="icono-nav"></a></td>
+                                    </tr>
+                                <% } %>
+                                
+                            </tbody>
+                        </table> 
+                    </div>                               
+            </div>
+        </div>
+    </div>
+
+
+
+    
+
+
+</body>
+
+</html>

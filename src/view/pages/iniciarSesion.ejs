@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/bootstrap.min.css">
+    <link rel="icon" type="image/x-icon" href="/img/logo.png">
+    <title>Red Tulum</title>
+</head>
+<!--Imagen de fondo-->
+
+<body class="body_iniciarS">
+
+    <!--Incluir el archivo header.ejs-->
+
+    <header>
+        <%- include('../partials/header'); -%>
+    </header>
+
+    <!--Iniciar Sesión-->
+    <div class="inisiarS">
+        <div class="container">
+            <div class="abs-center">
+                <form action="/authenticate" method="post" class="border p-3 form">
+                    <!--Titulo iniciar sesion-->
+                    <h1 class="text-center">Iniciar Sesión</h1>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Contraseña</label>
+                        <input type="password" name="password" id="password" class="form-control">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" value="Login">Iniciar Sesión</button>
+                    <div class="button" style="margin: 2%;"><a href="/registrate"
+                            style="color:black !important ;">Registrarse</a></div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!--MODAL SI HUBO UN ERROR AL INICIAR SESION-->
+
+    <% if ((success)==false) { %>
+        <div class="modal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">
+                            <%= conexion %>
+                        </h5>
+                        <a href="/login"><button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Close"></button></a>
+                        <!--<span aria-hidden="true"></span>-->
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            <%=conexion2%>
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="/login"><button type="button" class="btn btn-primary"
+                                data-bs-dismiss="modal">Cerrar</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <% } %>
+
+
+
+    <table class="decoracion">
+        <tbody>
+            <tr class="table-active">
+                <th scope="row">
+                    <td class="circulo"></td>
+                    <td class="circulo"></td>
+                    <td class="circulo"></td>
+                </th>
+                    
+            </tr>
+        </tbody>
+    </table>
+
+
+
+</body>
+
+</html>
